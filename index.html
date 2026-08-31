@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="YOUR NAME — portfolio, research, software and projects.">
+  <title>YOUR NAME — About</title>
+  <script>const t = localStorage.getItem("portfolio-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="about">
+  <canvas id="interactive-grid" class="interactive-grid" aria-hidden="true"></canvas>
+  <div class="page-glow" aria-hidden="true"></div>
+  <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch theme">
+    <svg class="icon" data-sun viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" />
+      <path
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="icon" data-moon viewBox="0 0 24 24">
+      <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2z" />
+    </svg>
+  </button>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <a class="brand-mark" href="./index.html" aria-label="Home">🏠︎</a>
+      <div class="profile">
+        <h1 class="profile-name">Amiteshwar Singh</h1><span class="profile-role">Software Developer</span>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="contact-mini">
+        <a class="contact-mini-item" href="mailto:your.email@example.com"><span class="contact-mini-icon"><svg
+              class="icon" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg></span><span><span class="contact-mini-label">Email</span><span
+              class="contact-mini-value">your.email@example.com</span></span></a>
+        <div class="contact-mini-item"><span class="contact-mini-icon"><svg class="icon" viewBox="0 0 24 24">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg></span><span><span class="contact-mini-label">Location</span><span class="contact-mini-value">Your
+              City, Country</span></span></div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="socials" aria-label="Social links"><a href="#" aria-label="LinkedIn">in</a><a href="#"
+          aria-label="GitHub">GH</a><a href="#" aria-label="Website">WWW</a></div>
+    </aside>
+    <main class="main-panel">
+      <header class="top-nav">
+        <button class="mobile-menu" data-menu-toggle type="button" aria-expanded="false" aria-controls="site-nav"
+          aria-label="Open navigation"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg></button>
+        <nav id="site-nav" class="nav-links" data-navigation aria-label="Primary">
+          <a href="./index.html" data-nav="about">About</a>
+          <a href="./resume.html" data-nav="resume">Resume</a>
+          <a href="./projects.html" data-nav="projects">Portfolio</a>
+          <a href="./research.html" data-nav="projects">Research</a>
+          <a href="./blog.html" data-nav="blog">Blog</a>
+          <a href="./contact.html" data-nav="contact">Contact</a>
+        </nav>
+      </header>
+      <div class="page-content">
+        <section data-reveal>
+          <h2 class="page-heading">About Me</h2>
+          <div class="heading-line"></div>
+          <div class="prose">
+            <p>I am Amiteshwar, I am interesting very broadly in areas like software development with its applications
+              extending to hardware, understanding autonomous systems, rendering engines and on the low-level
+              programming working on operating systems and compilers having recorded extensive independent research
+              manuscripts and findings.can be found here[Projects]</p>
+            <p>I also independently research in structures at the intersection of geometry, quantum theory and gravity.
+              As a summary of my work [unpublished research] I am interested in geometric langlands with applications in
+              2d Conformal Field Theory(CFT)/3d mirror symmetry/ 4d TQFT to yang-mills and their applications to gauge
+              theories. I also especially find the quantization of the Hitchin system by Beilson-Drinfeld really
+              fruitful</p>
+            <p>I also have Independent study of string-theoretic constructions, including AdS/CFT and also
+              non-supersymmetric string backgrounds like the O(16)xO(16). All my independent study manuscripts can be
+              found here []</p>
+            <p>The intersection of all of these areas contains both compelling questions and rich theories offering
+              distinct but interlocking viewpoints on those questions. Techniques and constructions from quantum field
+              theory, general relativity, Information theory, derived geometry, and geometric representation theory have
+              all been of interest and usage to me</p>
+            <p>I also run a specialized technical blog [blog]</p>
+          </div>
+        </section>
+        <section class="section" data-reveal>
+          <h2 class="section-title">What I'm Doing</h2>
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon">01</div>
+              <div>
+                <h3>Mobile Development</h3>
+                <p>Professional development of Android and iOS applications with modern architecture and reliable APIs.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-icon">02</div>
+              <div>
+                <h3>Web Development</h3>
+                <p>High-quality websites and web applications designed for performance, accessibility, and
+                  maintainability.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-icon">03</div>
+              <div>
+                <h3>UI/UX Design</h3>
+                <p>Clean interfaces and interaction systems that make complex products easier to understand and use.</p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-icon">04</div>
+              <div>
+                <h3>Backend Development</h3>
+                <p>Scalable APIs, databases, authentication, and infrastructure for production systems.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="section" data-reveal>
+          <h2 class="section-title">Skills</h2>
+          <div class="skills"><span class="skill">Python</span><span class="skill">JavaScript</span><span
+              class="skill">TypeScript</span><span class="skill">React</span><span class="skill">Flutter</span><span
+              class="skill">SQL</span><span class="skill">Git</span><span class="skill">Docker</span><span
+              class="skill">REST APIs</span><span class="skill">YOUR SKILL</span></div>
+        </section>
+      </div>
+      <footer class="footer">© <span data-year></span> Amiteshwar. All rights reserved.</footer>
+    </main>
+  </div>
+  <script src="./js/main.js" defer></script>
+</body>
+
+</html>

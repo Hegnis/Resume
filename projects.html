@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="YOUR NAME — selected projects and work.">
+  <title>YOUR NAME — Portfolio</title>
+  <script>const t = localStorage.getItem("portfolio-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="projects">
+  <canvas id="interactive-grid" class="interactive-grid" aria-hidden="true"></canvas>
+  <div class="page-glow" aria-hidden="true"></div>
+  <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch theme">
+    <svg class="icon" data-sun viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" />
+      <path
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="icon" data-moon viewBox="0 0 24 24">
+      <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2z" />
+    </svg>
+  </button>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <a class="brand-mark" href="./index.html" aria-label="Home">🏠︎</a>
+      <div class="profile">
+        <h1 class="profile-name">Amiteshwar Singh</h1><span class="profile-role">Software Developer</span>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="contact-mini">
+        <a class="contact-mini-item" href="mailto:your.email@example.com"><span class="contact-mini-icon"><svg
+              class="icon" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg></span><span><span class="contact-mini-label">Email</span><span
+              class="contact-mini-value">your.email@example.com</span></span></a>
+        <div class="contact-mini-item"><span class="contact-mini-icon"><svg class="icon" viewBox="0 0 24 24">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg></span><span><span class="contact-mini-label">Location</span><span class="contact-mini-value">Your
+              City, Country</span></span></div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="socials" aria-label="Social links"><a href="#" aria-label="LinkedIn">in</a><a href="#"
+          aria-label="GitHub">GH</a><a href="#" aria-label="Website">WWW</a></div>
+    </aside>
+    <main class="main-panel">
+      <header class="top-nav">
+        <button class="mobile-menu" data-menu-toggle type="button" aria-expanded="false" aria-controls="site-nav"
+          aria-label="Open navigation"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg></button>
+        <nav id="site-nav" class="nav-links" data-navigation aria-label="Primary">
+          <a href="./index.html" data-nav="about">About</a><a href="./resume.html" data-nav="resume">Resume</a><a
+            href="./projects.html" data-nav="projects">Portfolio</a><a href="./research.html"
+            data-nav="projects">Research</a><a href="./blog.html" data-nav="blog">Blog</a><a href="./contact.html"
+            data-nav="contact">Contact</a>
+        </nav>
+      </header>
+      <div class="page-content">
+        <section data-reveal>
+          <h2 class="page-heading">Portfolio</h2>
+          <div class="heading-line"></div>
+          <p class="lead">A scalable project index. Every project has its own page, so this can grow to dozens of
+            projects without turning the portfolio into one enormous document.</p>
+        </section>
+        <section class="section" data-reveal>
+          <div class="project-filters"><button class="filter-button active"
+              data-project-filter="all">All</button><button class="filter-button"
+              data-project-filter="software">Software</button><button class="filter-button"
+              data-project-filter="research">Research</button><button class="filter-button" data-project-filter="ai">AI
+              / Data</button></div>
+          <div class="project-grid">
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/RenderingEngine.png" alt="Project One"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>3d Rendering Engine</h3>
+                <p>LUMINA is a real-time 3D rendering engine developed around the implementation of a modern GPU-oriented rendering pipeline.</p><a class="project-link"
+                  href="projects/project-1.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="research">
+              <div class="project-cover"><img src="images/8bit.jpeg" alt="Project Two"
+                  loading="lazy"><span>RESEARCH</span></div>
+              <div class="project-body">
+                <h3>8-bit programmable computer</h3>
+                <p>Describe the research question, method, and important finding.</p><a class="project-link"
+                  href="projects/project-2.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="ai">
+              <div class="project-cover"><img src="images/STM32_PCB.png" alt="Project Three" loading="lazy"><span>AI /
+                  DATA</span></div>
+              <div class="project-body">
+                <h3>STM32 bit PCB archetecture</h3>
+                <p>Designed and built multiple custom PCBs around 32-bit STM microcontrollers, combining embedded firmware with hardware design.</p><a class="project-link"
+                  href="projects/project-3.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/C-compiler.png" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/radiology.png" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/project-4.svg" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/project-4.svg" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/project-4.svg" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/project-4.svg" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+            <article class="project-card" data-project-category="software">
+              <div class="project-cover"><img src="images/project-4.svg" alt="Project Four"
+                  loading="lazy"><span>SOFTWARE</span></div>
+              <div class="project-body">
+                <h3>C-compiler</h3>
+                <p>Use this card for another substantial project.</p><a class="project-link"
+                  href="projects/project-4.html">View project →</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">© <span data-year></span> Amiteshwar. All rights reserved.</footer>
+    </main>
+  </div>
+  <script src="./js/main.js" defer></script>
+</body>
+
+</html>
