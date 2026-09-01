@@ -285,3 +285,45 @@
   const canvas = document.querySelector('#interactive-grid');
   if (canvas) new InteractionGrid(canvas);
 })();
+
+/* =========================================
+   Resume Read More
+   ========================================= */
+
+document.querySelectorAll(".read-more-btn").forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const entry = button.closest(".timeline-item");
+        const expandable = entry.querySelector(".resume-expandable");
+
+        const isExpanded =
+            button.getAttribute("aria-expanded") === "true";
+
+        if (isExpanded) {
+
+            expandable.classList.remove("is-expanded");
+
+            button.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            button.querySelector(".read-more-label").textContent =
+                "Read more";
+
+        } else {
+
+            expandable.classList.add("is-expanded");
+
+            button.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            button.querySelector(".read-more-label").textContent =
+                "Read less";
+        }
+    });
+
+});

@@ -149,7 +149,7 @@ img { display: block; max-width: 100%; }
 }
 
 .profile-name {
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: Manrope, Inter, sans-serif;
   font-size: 25px;
   line-height: 1.15;
@@ -307,6 +307,82 @@ img { display: block; max-width: 100%; }
   letter-spacing: -.05em;
 }
 
+/* =========================================
+   Resume Expandable Content
+   ========================================= */
+
+.resume-expandable {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-size: 14.5px;
+
+    transition:
+        max-height 0.45s ease,
+        opacity 0.3s ease;
+}
+
+.resume-expandable.is-expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.resume-expandable ul {
+    margin-top: 14px;
+}
+
+
+/* =========================================
+   Read More Button
+   ========================================= */
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 14px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--accent-color);
+
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+.read-more-btn:hover {
+    opacity: 0.65;
+}
+
+.read-more-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    font-size: 0.9rem;
+    line-height: 1;
+
+    transition: transform 0.35s ease;
+}
+
+.read-more-btn[aria-expanded="true"] .read-more-icon {
+    transform: rotate(45deg);
+}
 .heading-line {
   width: 40px;
   height: 5px;
@@ -315,6 +391,8 @@ img { display: block; max-width: 100%; }
   background: var(--accent);
   box-shadow: 0 0 20px var(--accent-soft);
 }
+
+
 
 .lead,
 .prose p,
