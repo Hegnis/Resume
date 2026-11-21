@@ -327,3 +327,320 @@ document.querySelectorAll(".read-more-btn").forEach((button) => {
     });
 
 });
+
+/* =========================================================
+   RESEARCH PAPER VIEWER
+   ========================================================= */
+
+const researchPapers = {
+
+  "de-sitter-distance": {
+    category: "HEP-TH · MATH-PHY",
+    title: "On de Sitter in relation to distance conjecture",
+    author: "Amiteshwar",
+
+    abstract:
+      "The Swampland Distance Conjecture proposes that an effective field theory coupled to quantum gravity cannot remain valid over an arbitrarily large geodesic distance in scalar-field space. We discuss an important relationship between the Distance and the deSitter Conjecture through Holography",
+
+    pdf:
+      "research/papers/deSitter_Distance_Conjecture.pdf",
+
+    tags: [
+      "Swampland",
+      "de Sitter",
+      "Distance Conjecture",
+      "Quantum Gravity"
+    ]
+  },
+
+
+  "topological-5d-n2": {
+    category: "MATH-PHY · HEP-TH",
+    title: "Topological 5d Gauge Theories",
+    author: "Amiteshwar",
+
+    abstract:
+      "A study of topologically twisted five-dimensional N=2 gauge theories and possible Langlands-type dualities between higher Floer homological structures.",
+
+    pdf:
+      "research/papers/5D_topological_GaugeTheories.pdf",
+
+    tags: [
+      "Gauge Theory",
+      "5D QFT",
+      "Topological Field Theory",
+      "Geometric Langlands"
+    ]
+  },
+
+
+  "holography_entanglement": {
+    category: "HEP-TH · MATH-PHY",
+    title: "Entanglement and Holography",
+    author: "Amiteshwar",
+
+    abstract:
+      "A study of the holographic derivation of entanglement entropy in AdS/CFT and the geometric interpretation of quantum entanglement,  along with its later developments, particularly the HubenyRangamani-Takayanagi (HRT) extension and the Lewkowycz-Maldacena gravitational derivation",
+
+    pdf:
+      "research/papers/Holography_and_Entanglement.pdf",
+
+    tags: [
+      "AdS/CFT",
+      "Entanglement",
+      "Holography",
+      "Quantum Information"
+    ]
+  },
+
+
+  "d-branes-k-theory": {
+    category: "HEP-TH · MATH-PHY",
+    title: "D-Branes with a K-Theoretic Survey",
+    author: "Amiteshwar",
+
+    abstract:
+      "A study of D-branes and their classification through K-theoretic structures, including twisted K-theory in the presence of background NS–NS H-flux.",
+
+    pdf:
+      "research/papers/Dbranes_Ktheory.pdf",
+
+    tags: [
+      "D-Branes",
+      "K-Theory",
+      "String Theory",
+      "H-Flux"
+    ]
+  },
+
+
+  "knot-theory": {
+    category: "MATH-PHY · TQFT",
+    title: "Knot Theory and ChernSimons",
+    author: "Amiteshwar",
+
+    abstract:
+      "A study of the relationship between knot invariants, the Jones polynomial, and topological quantum field theories, with particular attention to Chern–Simons theory and Wilson loop observables.We also briefly discuss the non-compact abelian TQFTs, namely Techmuller",
+
+    pdf:
+      "research/papers/Knot_Theory_and_Chern_Simons.pdf",
+
+    tags: [
+      "Knot Theory",
+      "Jones Polynomial",
+      "Chern–Simons",
+      "TQFT"
+    ]
+  },
+
+
+  "type-iib-calabi-yau": {
+    category: "HEP-TH · STRING THEORY",
+    title: "Type IIB Compactifications",
+    author: "Amiteshwar",
+
+    abstract:
+      "A study of Type IIB string theory compactified on Calabi–Yau orientifolds, including fluxes, moduli stabilization, D-branes, four-dimensional effective field theories. We Also talk about the famous TypeIIB compactified on AdS_5 x S5 duality corresponding to N=4 SuperYang-Mills",
+
+    pdf:
+      "research/papers/Type_IIB_Compactifications.pdf",
+
+    tags: [
+      "Type IIB",
+      "Calabi–Yau",
+      "Orientifolds",
+      "Flux Compactification",
+      "Swampland"
+    ]
+  },
+
+
+  "geometric-langlands": {
+    category: "ALGEBRAIC GEOMETRY · REPRESENTATION THEORY",
+    title: "On the Proof of the Geometric Langlands Conjecture",
+    author: "Amiteshwar",
+
+    abstract:
+      "An independent study of the proof architecture surrounding the unramified and global geometric Langlands program, together with an examination of its mathematical and physical interpretations.",
+
+    pdf:
+      "research/papers/geometric-langlands.pdf",
+
+    tags: [
+      "Geometric Langlands",
+      "Representation Theory",
+      "Algebraic Geometry",
+      "Gauge Theory"
+    ]
+  }
+
+};
+
+
+/* =========================================================
+   LOAD PAPER
+   ========================================================= */
+
+function loadResearchPaper() {
+
+  const titleElement =
+    document.getElementById("paper-title");
+
+  /*
+   * If this is not paper.html, stop here.
+   */
+  if (!titleElement) {
+    return;
+  }
+
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const paperId =
+    params.get("paper");
+
+
+  const paper =
+    researchPapers[paperId];
+
+
+  /*
+   * Unknown manuscript.
+   */
+  if (!paper) {
+
+    titleElement.textContent =
+      "Research manuscript not found.";
+
+    return;
+  }
+
+
+  /* -----------------------------------------
+     Metadata
+     ----------------------------------------- */
+
+  const category =
+    document.getElementById("paper-category");
+
+  const author =
+    document.getElementById("paper-author");
+
+  const abstract =
+    document.getElementById("paper-abstract");
+
+  const filename =
+    document.getElementById("paper-filename");
+
+
+  if (category) {
+    category.textContent =
+      paper.category;
+  }
+
+
+  if (author) {
+    author.textContent =
+      paper.author;
+  }
+
+
+  if (abstract) {
+    abstract.textContent =
+      paper.abstract;
+  }
+
+
+  if (filename) {
+    filename.textContent =
+      paper.pdf.split("/").pop();
+  }
+
+
+  titleElement.textContent =
+    paper.title;
+
+
+  document.title =
+    `${paper.title} — Amiteshwar`;
+
+
+  /* -----------------------------------------
+     Tags
+     ----------------------------------------- */
+
+  const tags =
+    document.getElementById("paper-tags");
+
+
+  if (tags) {
+
+    tags.innerHTML = "";
+
+    paper.tags.forEach(tag => {
+
+      const element =
+        document.createElement("span");
+
+      element.className =
+        "paper-tag";
+
+      element.textContent =
+        tag;
+
+      tags.appendChild(element);
+
+    });
+
+  }
+
+
+  /* -----------------------------------------
+     PDF
+     ----------------------------------------- */
+
+  const frame =
+    document.getElementById("paper-frame");
+
+  const download =
+    document.getElementById("paper-download");
+
+  const viewer =
+    document.querySelector(".paper-viewer");
+
+
+  if (frame) {
+
+    frame.src =
+      `${paper.pdf}#view=FitH`;
+
+    frame.addEventListener("load", () => {
+
+      if (viewer) {
+        viewer.classList.add("loaded");
+      }
+
+    });
+
+  }
+
+
+  if (download) {
+
+    download.href =
+      paper.pdf;
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  loadResearchPaper
+);

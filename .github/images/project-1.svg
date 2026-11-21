@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
-    <rect width="1200" height="675" fill="#181919"/>
-    <rect x="55" y="55" width="1090" height="565" rx="24" fill="#202121" stroke="#3a3b3b"/>
-    <circle cx="105" cy="105" r="10" fill="#e5b94a"/>
-    <text x="105" y="315" fill="#f0f0f0" font-family="Arial, sans-serif" font-size="56" font-weight="700">PROJECT 1</text>
-    <text x="105" y="370" fill="#9d9f9f" font-family="Arial, sans-serif" font-size="24">Replace this placeholder image</text>
-</svg>
